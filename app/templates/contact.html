@@ -1,11 +1,48 @@
 {% extends 'base.html' %}
 {% block title %}Kontakt - IT-Praktika{% endblock %}
 {% block content %}
-<h2>Kontakt</h2>
-<ul class="list-unstyled">
-    <li><strong>Adresse:</strong> Inseliquai 12B, 6005 Luzern</li>
-    <li><strong>Telefon:</strong> 041 227 01 01</li>
-    <li><strong>Fax:</strong> 041 227 01 02</li>
-    <li><strong>E-Mail:</strong> info@it-praktika.ch</li>
-</ul>
+<div class="px-4 px-md-5 py-5">
+    <h2 class="mb-4">Kontakt</h2>
+    <div class="row">
+        <!-- Kontaktinfos + Map -->
+        <div class="col-md-6 mb-4">
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item"><strong>Adresse:</strong> Inseliquai 12B, 6005 Luzern</li>
+                <li class="list-group-item"><strong>Telefon:</strong> 041 227 01 01</li>
+                <li class="list-group-item"><strong>Fax:</strong> 041 227 01 02</li>
+                <li class="list-group-item"><strong>E-Mail:</strong> <a href="mailto:info@it-praktika.ch">info@it-praktika.ch</a></li>
+            </ul>
+            <!-- Google Maps -->
+            <div class="rounded shadow-sm overflow-hidden mb-3" style="height: 250px;">
+                <iframe
+                    src="https://www.google.com/maps?q=Inseliquai+12B,+6005+Luzern,+Schweiz&output=embed"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <!-- Kontaktformular -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Kontaktformular</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ihr Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-Mail*</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Nachricht*</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Ihre Nachricht ..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Senden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

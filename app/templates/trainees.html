@@ -1,7 +1,122 @@
 {% extends 'base.html' %}
 {% block title %}Praktikanten - IT-Praktika{% endblock %}
 {% block content %}
-<h2>Praktikanten</h2>
-<p>Die Lehrlinge der Benedict Schule Luzern sind hochmotiviert, wissbegierig und haben bereits in den ersten beiden Lehrjahren ein fundiertes Grundwissen in der Softwareentwicklung, Datenbankanbindung, Netzwerktechnik und Systemtechnik erworben.</p>
-<p>Unsere Klasse besteht aus vielen unterschiedlichen Persönlichkeiten – vom App-Entwickler über den Datenbank-Spezialisten bis zum Web-Profi ist alles dabei. Gemeinsames Ziel ist, im Praktikum unser Können in echten IT-Projekten unter Beweis zu stellen.</p>
+<div class="px-4 px-md-5 py-5">
+    <h2 class="mb-4">Unsere Praktikanten</h2>
+    <p class="mb-5">Lernen Sie unsere motivierten Praktikanten kennen:</p>
+    <!-- Carousel Start -->
+    <div id="praktikantenCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row justify-content-center">
+                    <!-- Praktikant 1 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" alt="Lukas Bieri">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Lukas Bieri</h6>
+                                <div class="text-muted small mb-1">Softwareentwicklung</div>
+                                <div class="small">Teamplayer, Webentwicklung, Zuverlässig</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Praktikant 2 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="card-img-top" alt="Daniel Zurmühle">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Daniel Zurmühle</h6>
+                                <div class="text-muted small mb-1">Full Stack &amp; KI</div>
+                                <div class="small">Python, Backend, Automatisierung</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Praktikant 3 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top" alt="Sarah Muster">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Sarah Muster</h6>
+                                <div class="text-muted small mb-1">Frontend &amp; UX</div>
+                                <div class="small">HTML, CSS, JavaScript, Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Praktikant 4 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/men/21.jpg" class="card-img-top" alt="David Meier">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">David Meier</h6>
+                                <div class="text-muted small mb-1">Systemtechnik</div>
+                                <div class="small">Netzwerke, Windows, Linux</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <!-- Praktikant 5 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/women/55.jpg" class="card-img-top" alt="Nadine Schmid">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Nadine Schmid</h6>
+                                <div class="text-muted small mb-1">Projektmanagement</div>
+                                <div class="small">Organisation, Planung, Kommunikation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Praktikant 6 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" class="card-img-top" alt="Max Muster">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Max Muster</h6>
+                                <div class="text-muted small mb-1">Datenanalyse</div>
+                                <div class="small">Python, Statistik, Reports</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Praktikant 7 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/men/33.jpg" class="card-img-top" alt="Peter Keller">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Peter Keller</h6>
+                                <div class="text-muted small mb-1">Cloud &amp; DevOps</div>
+                                <div class="small">AWS, Azure, Automation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Praktikant 8 -->
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://randomuser.me/api/portraits/women/35.jpg" class="card-img-top" alt="Anna Graf">
+                            <div class="card-body p-2">
+                                <h6 class="card-title mb-1">Anna Graf</h6>
+                                <div class="text-muted small mb-1">Testing &amp; Qualität</div>
+                                <div class="small">Unit Tests, UI-Tests, Dokumentation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Füge weitere Slides nach gleichem Muster hinzu, falls du mehr als 8 Profile hast -->
+        </div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Vorherige</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Nächste</span>
+        </button>
+    </div>
+    <!-- Carousel End -->
+</div>
 {% endblock %}

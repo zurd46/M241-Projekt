@@ -1,8 +1,49 @@
 {% extends 'base.html' %}
 {% block title %}Home - IT-Praktika{% endblock %}
 {% block content %}
-<h1 class="mb-4">Willkommen bei IT-Praktika</h1>
-<p>Portal für Praktikumsstellen der Informatiklehre.</p>
-<p>Gesucht wird: Praktikumsstelle(n) Fachrichtung Applikation (18 bis 24 Monate).</p>
-<p>Wir bieten: Top motivierte und bereits gut ausgebildete Informatik-Lehrlinge.</p>
+<!-- Hero Section (Wide) -->
+<div class="p-5 mb-5 bg-primary text-white rounded-0 shadow w-100" style="background: linear-gradient(90deg, #1565c0 60%, #2196f3 100%);">
+    <div class="container-fluid px-5">
+        <h1 class="display-5 fw-bold">Willkommen bei IT-Praktika</h1>
+        <p class="lead mb-4">Das Portal für Praktikumsstellen der Informatiklehre.</p>
+        <a href="{{ url_for('main.trainees') }}" class="btn btn-light btn-lg px-4 me-2">Praktikanten entdecken</a>
+        <a href="{{ url_for('main.contact') }}" class="btn btn-outline-light btn-lg px-4">Kontakt</a>
+    </div>
+</div>
+
+<!-- Cards Section (Wide) -->
+<div class="container-fluid px-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://picsum.photos/300/180?1" class="card-img-top" alt="Praktikumsplatz">
+                <div class="card-body">
+                    <h5 class="card-title">Praktikumsplatz finden</h5>
+                    <p class="card-text">Finde passende Praktikumsstellen für angehende Informatiker/innen der Fachrichtung Applikationsentwicklung.</p>
+                    <a href="{{ url_for('main.trainees') }}" class="btn btn-primary">Zu den Praktikanten</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://picsum.photos/300/180?2" class="card-img-top" alt="Über uns">
+                <div class="card-body">
+                    <h5 class="card-title">Über die Ausbildung</h5>
+                    <p class="card-text">Erfahre mehr über die schulische Informatiklehre an der Benedict Schule Luzern und die Vorteile eines Praktikums.</p>
+                    <a href="{{ url_for('main.about') }}" class="btn btn-primary">Über uns</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://picsum.photos/300/180?3" class="card-img-top" alt="Kontakt">
+                <div class="card-body">
+                    <h5 class="card-title">Kontakt &amp; Hilfe</h5>
+                    <p class="card-text">Du hast Fragen oder brauchst Unterstützung? Kontaktiere unser Team, wir helfen gerne weiter!</p>
+                    <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Kontakt aufnehmen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

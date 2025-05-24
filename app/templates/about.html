@@ -1,9 +1,72 @@
 {% extends 'base.html' %}
 {% block title %}Über uns - IT-Praktika{% endblock %}
 {% block content %}
-<h2>Über uns</h2>
-<p>Als angehende Informatiker der Benedict Schule Luzern suchen wir ein 18-monatiges Praktikum, um die nötige Praxiserfahrung zu machen, die eine Ausbildung als Informatiker vorsieht.</p>
-<p>Unsere Ausbildung ist eine schulisch orientierte Informatiklehre. Alle Absolventen erhalten am Schluss ihrer Ausbildung ein eidgenössisches Fähigkeitszeugnis.</p>
-<p>Die ersten 4 Semester basieren nur auf schulischem Unterricht. Dort erwerben wir erste Fähigkeiten und lernen, Projekte zu planen, zu dokumentieren und im Team durchzuführen.</p>
-<p>Im Anschluss folgt das Praktikum, in dem wir unser Wissen in der Praxis einsetzen und vertiefen können.</p>
+<div class="px-4 px-md-5 py-5">
+    <h2 class="mb-4">Über uns</h2>
+    <div class="accordion" id="aboutAccordion">
+        <!-- Frage 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Wer sind wir?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                    <p>Als angehende Informatiker der Benedict Schule Luzern suchen wir ein 18-monatiges Praktikum, um die nötige Praxiserfahrung zu machen, die eine Ausbildung als Informatiker vorsieht.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Frage 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    Was ist der Zweck dieser Website?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                    <p>Wir möchten Ihnen als Arbeitgeber und Arbeitgeberinnen einen Einblick in unsere Klasse, unseren Werdegang und unsere Ausbildung im Allgemeinen gewähren.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Frage 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Wie sieht die Ausbildung aus?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                    <p>
+                        Unsere Ausbildung ist eine schulisch orientierte Informatiklehre. Alle Absolventen erhalten am Schluss ihrer Ausbildung ein eidgenössisches Fähigkeitszeugnis.<br><br>
+                        Die ersten 4 Semester basieren nur auf schulischem Unterricht. Dort erwerben wir erste Fähigkeiten und lernen die Theorie. Außerdem besuchen wir die üblichen überbetrieblichen Kurse.<br><br>
+                        Anschliessend daran folgen Semester 5–7 als Praktikanten in einem Informatikbetrieb. Dies wird begleitet von einem kleinen Bruchteil Schule, wie es auch in der klassischen Informatiklehre Gang und Gäbe ist.<br><br>
+                        Zum Abschluss kommt noch das 8. Semester, wobei wieder ausschließlich die Schule besucht wird.<br><br>
+                        Falls die Lehrabschlussprüfungen erfolgreich bestanden werden, ist die Ausbildung abgeschlossen und man erhält das eidg. Fähigkeitszeugnis als Applikationsentwickler.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Frage 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Welche Module wurden behandelt?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                    <p>
+                        <strong>Semester 1-4:</strong><br>
+                        100, 101, 104, 105, 114, 117, 120, 121, 122, 123, 213, 226a, 226b, 242, 304, 305, 307, 318, 403, 404, 411, 431<br><br>
+                        <strong>Semester 5-8:</strong><br>
+                        133, 150, 151, 152, 153, 183, 306, 326, 335, 426
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
