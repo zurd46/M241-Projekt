@@ -43,39 +43,6 @@ python run.py
 
 Die Seite ist dann erreichbar unter [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-Projektstruktur
-
-Projekt/
-│
-├── app/
-│   ├── **init**.py
-│   ├── routes.py
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── index.html
-│   │   ├── about.html
-│   │   ├── trainees.html
-│   │   ├── school.html
-│   │   ├── contact.html
-│   │   └── impressum.html
-│   └── static/
-│       ├── css/
-│       │   └── styles.css
-│       └── img/
-│           └── ... (eigene Bilder, z. B. Praktikanten)
-│
-├── config.py
-├── requirements.txt
-├── run.py
-└── README.md
-
-Anpassungen
-
-* Praktikanten-Profile/Bilder:
-  Eigene Bilder im Ordner app/static/img/ speichern und den Bildpfad in trainees.html anpassen.
-* Kontaktformular:
-  Das Backend für E-Mail-Versand kannst du bei Bedarf ergänzen (z.B. Flask-Mail, Formspree, etc.).
-
 Kontakt
 
 Benedict-Schule Luzern AG
