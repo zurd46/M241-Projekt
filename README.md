@@ -32,4 +32,6 @@ Flask-&-Bootstrap-basiertes Portal der Benedict-Schule Luzern, um Auszubildende 
    MAIL_USERNAME=demo@example.com
    MAIL_PASSWORD=demopassword
    MAIL_DEFAULT_SENDER_NAME="IT-Praktika Kontakt"
-   MAIL_DEFAULT_SENDER_ADDR=kontakt@example.com
+   MAIL_DEFAULT_SENDER_ADDR=info@it-praktika.ch
+
+
