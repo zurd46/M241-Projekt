@@ -25,7 +25,7 @@ def create_app():
 
     # Default-Sender aus zwei ENV-Variablen zusammensetzen
     sender_name = os.getenv('MAIL_DEFAULT_SENDER_NAME', 'IT-Praktika Kontakt')
-    sender_addr = os.getenv('MAIL_DEFAULT_SENDER_ADDR', 'kontakt@it-praktika.ch')
+    sender_addr = os.getenv('MAIL_DEFAULT_SENDER_ADDR', 'info@it-praktika.ch')
     app.config['MAIL_DEFAULT_SENDER'] = (sender_name, sender_addr)
 
     # 4) Initialisiere Flask-Mail
