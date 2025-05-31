@@ -1,14 +1,13 @@
 import os
-from flask import Blueprint, render_template, current_app
+from flask import Blueprint, render_template, current_app, request, jsonify
+from flask_mail import Message
+from . import mail  # Greift auf das Mail-Objekt aus __init__.py zu
 
 main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    # 1) Absoluter Pfad zum Ordner static/images
     image_folder = os.path.join(current_app.static_folder, 'images')
-    
-    # 2) Nur gültige Bilddateien herausfiltern
     valid_exts = ('.jpg', '.jpeg', '.png', '.gif', '.webp')
     try:
         hero_images = [
@@ -16,14 +15,39 @@ def index():
             if fname.lower().endswith(valid_exts)
         ]
     except FileNotFoundError:
-        # Sollte der Ordner fehlen, liste eine leere Liste auf
         hero_images = []
-    
-    # 3) Optional: Alphabetisch sortieren
     hero_images.sort()
-    
-    # 4) Übergabe an das Template
     return render_template('index.html', hero_images=hero_images)
+
+@main.route('/send_email', methods=['POST'])
+def send_email():
+    data = request.get_json() or {}
+    name = data.get('name', '').strip()
+    email = data.get('email', '').strip()
+    message_body = data.get('message', '').strip()
+
+    if not name or not email or not message_body:
+        return jsonify(success=False, error="Alle Felder (Name, E-Mail, Nachricht) sind verpflichtend."), 400
+
+    try:
+        subject = f"Kontaktanfrage von {name}"
+        msg = Message(
+            subject=subject,
+            recipients=['info@it-praktika.ch']
+        )
+        msg.body = f"""
+Neue Kontaktanfrage über das Formular:
+
+Name: {name}
+E-Mail: {email}
+
+Nachricht:
+{message_body}
+        """
+        mail.send(msg)
+        return jsonify(success=True)
+    except Exception as e:
+        return jsonify(success=False, error=str(e)), 500
 
 @main.route('/about')
 def about():

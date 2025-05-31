@@ -1,191 +1,297 @@
 {% extends 'base.html' %}
-{% block title %}Praktikanten - IT-Praktika{% endblock %}
+{% block title %}Praktikanten – IT-Praktika{% endblock %}
 
 {% block content %}
 <div class="px-4 px-md-5 py-5">
   <h2 class="mb-4">Unsere Praktikanten</h2>
-  <p class="mb-5">Lernen Sie unsere motivierten Praktikanten kennen:</p>
+  <p class="mb-4">Lernen Sie unsere motivierten Praktikanten kennen und kontaktieren Sie sie direkt:</p>
 
-  <!-- Carousel Start -->
-  <div id="praktikantenCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
-    <div class="carousel-inner">
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row justify-content-center">
+  <!-- SUCH‐/FILTERFELD -->
+  <div class="mb-4">
+    <input
+      type="text"
+      id="searchInput"
+      class="form-control"
+      placeholder="Filter nach Name oder Skill…"
+    >
+  </div>
 
-          <!-- Praktikant 1: Dhannya Chollempuzha -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/Dhannya.jpg') }}"
-                class="card-img-top same-height"
-                alt="Dhannya Chollempuzha"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Dhannya Chollempuzha</h6>
-                <div class="text-muted small mb-1">Softwareentwicklung</div>
-                <div class="small">Teamplayer, Webentwicklung, Zuverlässig</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Praktikant 2: Eray Gündogdu -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/Eray_G.jpg') }}"
-                class="card-img-top same-height"
-                alt="Eray Gündogdu"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Eray Gündogdu</h6>
-                <div class="text-muted small mb-1">Full Stack &amp; KI</div>
-                <div class="small">Python, Backend, Automatisierung</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Praktikant 3: Alexander Da Costa -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/AlexanderDaCosta.jpg') }}"
-                class="card-img-top same-height"
-                alt="Alexander Da Costa"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Alexander Da Costa</h6>
-                <div class="text-muted small mb-1">Frontend &amp; UX</div>
-                <div class="small">HTML, CSS, JavaScript, Design</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Praktikant 4: Hadi Alaeddine -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/hadi.jpeg') }}"
-                class="card-img-top same-height"
-                alt="Hadi Alaeddine"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Hadi Alaeddine</h6>
-                <div class="text-muted small mb-1">Systemtechnik</div>
-                <div class="small">Netzwerke, Windows, Linux</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row justify-content-center">
-
-          <!-- Praktikant 5: Ivan Scheuber -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/Ivan.png') }}"
-                class="card-img-top same-height"
-                alt="Ivan Scheuber"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Ivan Scheuber</h6>
-                <div class="text-muted small mb-1">Projektmanagement</div>
-                <div class="small">Organisation, Planung, Kommunikation</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Praktikant 6: Efstratios Vogiatzis -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/EfstratiosVogiatzis.jpeg') }}"
-                class="card-img-top same-height"
-                alt="Efstratios Vogiatzis"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Efstratios Vogiatzis</h6>
-                <div class="text-muted small mb-1">Datenanalyse</div>
-                <div class="small">Python, Statistik, Reports</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Praktikant 7: Philipp Klunder -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/Klunder.Philipp.jpeg') }}"
-                class="card-img-top same-height"
-                alt="Philipp Klunder"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Philipp Klunder</h6>
-                <div class="text-muted small mb-1">Cloud &amp; DevOps</div>
-                <div class="small">AWS, Azure, Automation</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Praktikant 8: Jan Lucas Kubacki -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/janlucaskubacki.jpg') }}"
-                class="card-img-top same-height"
-                alt="Jan Lucas Kubacki"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Jan Lucas Kubacki</h6>
-                <div class="text-muted small mb-1">Testing &amp; Qualität</div>
-                <div class="small">Unit Tests, UI-Tests, Dokumentation</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row justify-content-center">
-
-          <!-- Praktikant 9: Milo Müller -->
-          <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-              <img
-                src="{{ url_for('static', filename='images/milo.jpg') }}"
-                class="card-img-top same-height"
-                alt="Milo Müller"
-              >
-              <div class="card-body p-2">
-                <h6 class="card-title mb-1">Milo Müller</h6>
-                <div class="text-muted small mb-1">Support &amp; Helpdesk</div>
-                <div class="small">Windows, Kundenbetreuung, Troubleshooting</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wenn du mehr Profile hast, kopiere diesen Block und passe an -->
+  <!-- GRID‐DARSTELLUNG DER PRAKTIKANTEN (4 SPALTEN HOCH) -->
+  <div class="row row-cols-1 row-cols-md-4 g-4" id="praktikantenGrid">
+    <!-- Praktikant 1: Dhannya Chollempuzha -->
+    <div
+      class="col praktikant-card"
+      data-name="dhannya chollempuzha"
+      data-skills="softwareentwicklung teamplayer webentwicklung zuverlässig"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Dhannya.jpg') }}"
+          class="card-img-top"
+          alt="Dhannya Chollempuzha"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Dhannya Chollempuzha</h6>
+          <div class="text-muted small mb-1">Softwareentwicklung</div>
+          <div class="small mb-3">Teamplayer, Webentwicklung, Zuverlässig</div>
+          <a
+            href="mailto:dhannya.chollempuzha@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Vorherige</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Nächste</span>
-    </button>
+    <!-- Praktikant 2: Eray Gündogdu -->
+    <div
+      class="col praktikant-card"
+      data-name="eray gündogdu"
+      data-skills="full stack ki python backend automatisierung"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Eray_G.jpg') }}"
+          class="card-img-top"
+          alt="Eray Gündogdu"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Eray Gündogdu</h6>
+          <div class="text-muted small mb-1">Full Stack &amp; KI</div>
+          <div class="small mb-3">Python, Backend, Automatisierung</div>
+          <a
+            href="mailto:eray.guendogdu@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 3: Alexander Da Costa -->
+    <div
+      class="col praktikant-card"
+      data-name="alexander da costa"
+      data-skills="frontend ux html css javascript design"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/AlexanderDaCosta.jpg') }}"
+          class="card-img-top"
+          alt="Alexander Da Costa"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Alexander Da Costa</h6>
+          <div class="text-muted small mb-1">Frontend &amp; UX</div>
+          <div class="small mb-3">HTML, CSS, JavaScript, Design</div>
+          <a
+            href="mailto:alexander.dacosta@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 4: Hadi Alaeddine -->
+    <div
+      class="col praktikant-card"
+      data-name="hadi alaeddine"
+      data-skills="systemtechnik netzwerke windows linux"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/hadi.jpeg') }}"
+          class="card-img-top"
+          alt="Hadi Alaeddine"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Hadi Alaeddine</h6>
+          <div class="text-muted small mb-1">Systemtechnik</div>
+          <div class="small mb-3">Netzwerke, Windows, Linux</div>
+          <a
+            href="mailto:hadi.alaeddine@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 5: Ivan Scheuber -->
+    <div
+      class="col praktikant-card"
+      data-name="ivan scheuber"
+      data-skills="projektmanagement organisation planung kommunikation"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Ivan.png') }}"
+          class="card-img-top"
+          alt="Ivan Scheuber"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Ivan Scheuber</h6>
+          <div class="text-muted small mb-1">Projektmanagement</div>
+          <div class="small mb-3">Organisation, Planung, Kommunikation</div>
+          <a
+            href="mailto:ivan.scheuber@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 6: Efstratios Vogiatzis -->
+    <div
+      class="col praktikant-card"
+      data-name="efstratios vogiatzis"
+      data-skills="datenanalyse python statistik reports"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/EfstratiosVogiatzis.jpeg') }}"
+          class="card-img-top"
+          alt="Efstratios Vogiatzis"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Efstratios Vogiatzis</h6>
+          <div class="text-muted small mb-1">Datenanalyse</div>
+          <div class="small mb-3">Python, Statistik, Reports</div>
+          <a
+            href="mailto:efstratios.vogiatzis@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 7: Philipp Klunder -->
+    <div
+      class="col praktikant-card"
+      data-name="philipp klunder"
+      data-skills="cloud devops aws azure automation"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Klunder.Philipp.jpeg') }}"
+          class="card-img-top"
+          alt="Philipp Klunder"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Philipp Klunder</h6>
+          <div class="text-muted small mb-1">Cloud &amp; DevOps</div>
+          <div class="small mb-3">AWS, Azure, Automation</div>
+          <a
+            href="mailto:philipp.klunder@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 8: Jan Lucas Kubacki -->
+    <div
+      class="col praktikant-card"
+      data-name="jan lucas kubacki"
+      data-skills="testing qualität unit tests ui-tests dokumentation"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/janlucaskubacki.jpg') }}"
+          class="card-img-top"
+          alt="Jan Lucas Kubacki"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Jan Lucas Kubacki</h6>
+          <div class="text-muted small mb-1">Testing &amp; Qualität</div>
+          <div class="small mb-3">Unit Tests, UI-Tests, Dokumentation</div>
+          <a
+            href="mailto:janlucas.kubacki@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praktikant 9: Milo Müller -->
+    <div
+      class="col praktikant-card"
+      data-name="milo müller"
+      data-skills="support helpdesk windows kundenbetreuung troubleshooting"
+    >
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/milo.jpg') }}"
+          class="card-img-top"
+          alt="Milo Müller"
+          style="height: 370px; object-fit: cover; width: 100%;"
+        >
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-1">Milo Müller</h6>
+          <div class="text-muted small mb-1">Support &amp; Helpdesk</div>
+          <div class="small mb-3">Windows, Kundenbetreuung, Troubleshooting</div>
+          <a
+            href="mailto:milo.mueller@beispiel.ch"
+            class="btn btn-sm btn-primary mt-auto"
+            style="background-color: #1565c0; border-color: #1565c0;"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- Carousel End -->
 </div>
+
+<!-- ================ JAVASCRIPT FÜR FILTER ================ -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.praktikant-card');
+
+    input.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name');
+        const skills = card.getAttribute('data-skills');
+
+        if (name.includes(query) || skills.includes(query)) {
+          card.style.display = ''; // anzeigen
+        } else {
+          card.style.display = 'none'; // ausblenden
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}
