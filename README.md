@@ -33,5 +33,8 @@ Flask-&-Bootstrap-basiertes Portal der Benedict-Schule Luzern, um Auszubildende 
    MAIL_PASSWORD=demopassword
    MAIL_DEFAULT_SENDER_NAME="IT-Praktika Kontakt"
    MAIL_DEFAULT_SENDER_ADDR=info@it-praktika.ch
-
+  
+   Hinweis:
+   Achte darauf, dass .env in .gitignore steht.
+   Alternativ System-Umgebungsvariablen verwenden.
 
