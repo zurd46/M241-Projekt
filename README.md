@@ -58,6 +58,9 @@ Projektstruktur:
    MAIL_PASSWORD=demopassword
    MAIL_DEFAULT_SENDER_NAME="IT-Praktika Kontakt"
    MAIL_DEFAULT_SENDER_ADDR=info@it-praktika.ch
+
+   RECAPTCHA_SITE_KEY=................
+   RECAPTCHA_SECRET_KEY==................
   
    Hinweis:
    Achte darauf, dass .env in .gitignore steht.
