@@ -20,3 +20,16 @@ Flask-&-Bootstrap-basiertes Portal der Benedict-Schule Luzern, um Auszubildende 
     # Linux/macOS:
     source .venv/bin/activate
 
+3. Abhängigkeiten installieren
+   ```bash
+   pip install -r requirements.txt
+
+4. .env anlegen (Demo-Werte)
+   ```bash
+   MAIL_SERVER=smtp.example.com
+   MAIL_PORT=587
+   MAIL_USE_TLS=True
+   MAIL_USERNAME=demo@example.com
+   MAIL_PASSWORD=demopassword
+   MAIL_DEFAULT_SENDER_NAME="IT-Praktika Kontakt"
+   MAIL_DEFAULT_SENDER_ADDR=kontakt@example.com
