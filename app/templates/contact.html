@@ -1,51 +1,80 @@
 {% extends 'base.html' %}
-{% block title %}Kontakt - IT-Praktika{% endblock %}
+{% block title %}Kontakt – IT-Praktika{% endblock %}
 
 {% block content %}
-<div class="px-4 px-md-5 py-5">
-    <h2 class="mb-4">Kontakt</h2>
-    <div class="row">
-        <!-- Kontaktinfos + Map -->
-        <div class="col-md-6 mb-4">
-            <ul class="list-group list-group-flush mb-3">
-                <li class="list-group-item"><strong>Adresse:</strong> Inseliquai 12B, 6005 Luzern</li>
-                <li class="list-group-item"><strong>Telefon:</strong> 041 227 01 01</li>
-                <li class="list-group-item"><strong>Fax:</strong> 041 227 01 02</li>
-                <li class="list-group-item"><strong>E-Mail:</strong> <a href="mailto:info@it-praktika.ch">info@it-praktika.ch</a></li>
-            </ul>
-            <div class="rounded shadow-sm overflow-hidden mb-3" style="height: 250px;">
-                <iframe
-                    src="https://www.google.com/maps?q=Inseliquai+12B,+6005+Luzern,+Schweiz&output=embed"
-                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+<!-- ================= MAP & KONTAKTDATEN HERO ================= -->
+<section class="position-relative" style="height: 620px; background: #1565c0;">
+  <!-- Google Map als Hintergrund -->
+  <iframe
+    src="https://www.google.com/maps?q=Inseliquai+12B,+6005+Luzern,+Schweiz&output=embed"
+    width="100%" height="620"
+    style="filter: grayscale(0.1) contrast(1.1) opacity(0.88); border:0;"
+    loading="lazy" allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade"
+    class="position-absolute top-0 start-0 w-100 h-100"
+    aria-hidden="true"
+    tabindex="-1"
+  ></iframe>
+  <!-- Overlay-Kontaktdaten-Box -->
+  <div class="container h-100 position-relative">
+    <div class="row h-100 align-items-center">
+      <div class="col-md-7 col-lg-3">
+        <div class="bg-white bg-opacity-95 shadow-lg rounded-4 p-4 p-md-5 my-4" style="backdrop-filter: blur(1.5px);">
+          <h2 class="mb-3 fw-bold" style="color:#1565c0;">Kontakt</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+              <span><strong>Adresse:</strong> Inseliquai 12B, 6005 Luzern</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-telephone-fill text-primary fs-4 me-3"></i>
+              <span><strong>Telefon:</strong> <a href="tel:0412270101" class="text-decoration-none text-dark">041 227 01 01</a></span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-printer-fill text-primary fs-4 me-3"></i>
+              <span><strong>Fax:</strong> 041 227 01 02</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-envelope-at-fill text-primary fs-4 me-3"></i>
+              <span><strong>E-Mail:</strong> <a href="mailto:info@it-praktika.ch" class="text-decoration-none text-dark">info@it-praktika.ch</a></span>
+            </li>
+          </ul>
         </div>
-        <!-- Kontaktformular -->
-        <div class="col-md-6">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Kontaktformular</h5>
-                    <form id="contactForm" action="#" method="post">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name*</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Ihr Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">E-Mail*</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Nachricht*</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ihre Nachricht ..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100" id="submitBtn">Senden</button>
-                        <div id="statusMessage" class="mt-3"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- ================= KONTAKTFORMULAR ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 col-lg-6">
+        <div class="card shadow-sm border-0 rounded-4">
+          <div class="card-body p-4">
+            <h5 class="card-title mb-3 text-primary fw-bold">Kontaktformular</h5>
+            <form id="contactForm" action="#" method="post" autocomplete="off">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name*</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Ihr Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-Mail*</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Nachricht*</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ihre Nachricht ..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" id="submitBtn">Senden</button>
+              <div id="statusMessage" class="mt-3"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ========== Google reCAPTCHA v3 Script ========== -->
 <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
@@ -60,7 +89,6 @@
       submitBtn.disabled = true;
       statusMessage.textContent = 'Sende Nachricht...';
 
-      // === Google reCAPTCHA Token holen ===
       grecaptcha.ready(function () {
         grecaptcha.execute('{{ recaptcha_site_key }}', {action: 'contact'}).then(function (token) {
           const formData = new FormData(form);
