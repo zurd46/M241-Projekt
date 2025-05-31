@@ -1,53 +1,72 @@
 # IT-Praktika Website
 
-Moderne Webanwendung für Informatik-Praktikanten der Benedict-Schule Luzern
+**Kurzübersicht:**  
+Flask-&-Bootstrap-basiertes Portal der Benedict-Schule Luzern, um Auszubildende (Applikations- & Plattformentwicklung) zu präsentieren, Praktikanten-Profile zu filtern und Kontakt per E-Mail zu ermöglichen.
 
-Diese Website präsentiert die IT-Praktikanten-Klasse, informiert über die Ausbildung, bietet ein Praktikanten-Portfolio und stellt alle Kontaktmöglichkeiten bereit.
-Das Projekt basiert auf Flask und Bootstrap 5 und ist vollständig responsiv gestaltet.
+---
 
-Features
+Projektstruktur:
+   ```bash
+   M241-Projekt/
+      ├── .env               # SMTP-& E-Mail-Daten (Demo-Werte)
+      ├── requirements.txt
+      ├── run.py             # Flask-App-Factory
+      └── app/
+          ├── __init__.py    # create_app(): Flask, Mail, Blueprint, Kontext
+          ├── routes.py      # Routen & E-Mail-Handler
+          ├── templates/     # Jinja2-Vorlagen
+          │   ├── base.html
+          │   ├── index.html
+          │   ├── about.html
+          │   ├── trainees.html
+          │   ├── school.html
+          │   ├── contact.html
+          │   └── impressum.html
+          └── static/
+              ├── css/
+              │   └── style.css
+              ├── favicon.ico
+              └── images/    # Alle Hero- und Profilbilder
 
-* Startseite mit Hero-Bereich und Portfolio-Cards
-* Über uns mit FAQ-Accordion (Ausbildung, Ziele, Module etc.)
-* Praktikanten-Portfolio: Alle Profile als Carousel (modern, mobilfreundlich)
-* Schulvorstellung: Über die Benedict-Schule mit Bildern und Fakten
-* Kontaktseite: Kontaktinfos, Google Maps und Kontaktformular
-* Impressum
+```
 
-Installation
+## Installation
 
-1. Repository klonen
+1. Repository klonen  
+   ```bash
+   git clone https://github.com/zurd46/M241-Projekt.git
+   cd M241-Projekt
 
-git clone [https://github.com/zurd46/IT-Praktika.git](https://github.com/zurd46/IT-Praktika.git)
-cd IT-Praktika
-
-2. Virtuelle Umgebung erstellen und aktivieren
-
-python -m venv .venv
-
-Für Windows:
-
-.venv\\Scripts\\activate
-
-Für Mac/Linux:
-
-source .venv/bin/activate
+2. Virtuelle Umgebung erstellen & aktivieren
+   ```bash
+   python -m venv .venv
+    # Windows PowerShell:
+    .venv\Scripts\activate
+    # Linux/macOS:
+    source .venv/bin/activate
 
 3. Abhängigkeiten installieren
+   ```bash
+   pip install -r requirements.txt
 
-pip install -r requirements.txt
+4. .env anlegen (Demo-Werte)
+   ```bash
+   MAIL_SERVER=smtp.example.com
+   MAIL_PORT=587
+   MAIL_USE_TLS=True
+   MAIL_USERNAME=demo@example.com
+   MAIL_PASSWORD=demopassword
+   MAIL_DEFAULT_SENDER_NAME="IT-Praktika Kontakt"
+   MAIL_DEFAULT_SENDER_ADDR=info@it-praktika.ch
+  
+   Hinweis:
+   Achte darauf, dass .env in .gitignore steht.
+   Alternativ System-Umgebungsvariablen verwenden.
 
-4. Anwendung starten
+5. Anwendung starten
+    ```bash
+    python run.py
 
-python run.py
-
-Die Seite ist dann erreichbar unter [http://127.0.0.1:5000](http://127.0.0.1:5000)
-
-Kontakt
-
-Benedict-Schule Luzern AG
-Inseliquai 12B, 6005 Luzern, Schweiz
-Telefon: 041 227 01 01
-E-Mail: [info@it-praktika.ch](mailto:info@it-praktika.ch)
-
-© 2025 IT-Praktika
+6. Im Browser öffnen
+   ```bash
+   http://127.0.0.1:5000

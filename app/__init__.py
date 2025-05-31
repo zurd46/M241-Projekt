@@ -22,7 +22,7 @@ def create_app():
 
     # Default-Sender: Name und Adresse aus ENV (Fallbacks als Default)
     sender_name = os.getenv('MAIL_DEFAULT_SENDER_NAME', 'IT-Praktika Kontakt')
-    sender_addr = os.getenv('MAIL_DEFAULT_SENDER_ADDR', 'kontakt@it-praktika.ch')
+    sender_addr = os.getenv('MAIL_DEFAULT_SENDER_ADDR', 'info@it-praktika.ch')
     app.config['MAIL_DEFAULT_SENDER'] = (sender_name, sender_addr)
 
     # Optional: Geheimnisse wie reCAPTCHA in ENV, NICHT im Code! (wird im Blueprint benötigt)
