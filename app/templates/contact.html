@@ -13,7 +13,6 @@
                 <li class="list-group-item"><strong>Fax:</strong> 041 227 01 02</li>
                 <li class="list-group-item"><strong>E-Mail:</strong> <a href="mailto:info@it-praktika.ch">info@it-praktika.ch</a></li>
             </ul>
-            <!-- Google Maps -->
             <div class="rounded shadow-sm overflow-hidden mb-3" style="height: 250px;">
                 <iframe
                     src="https://www.google.com/maps?q=Inseliquai+12B,+6005+Luzern,+Schweiz&output=embed"
@@ -26,7 +25,6 @@
             <div class="card shadow-sm border-0">
                 <div class="card-body">
                     <h5 class="card-title mb-3">Kontaktformular</h5>
-                    <!-- WICHTIG: Die Form erhält eine ID und action="#" -->
                     <form id="contactForm" action="#" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name*</label>
@@ -49,7 +47,8 @@
     </div>
 </div>
 
-<!-- ================= JavaScript für asynchronen E-Mail-Versand ================= -->
+<!-- ========== Google reCAPTCHA v3 Script ========== -->
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactForm');
@@ -61,35 +60,39 @@
       submitBtn.disabled = true;
       statusMessage.textContent = 'Sende Nachricht...';
 
-      // FormData sammeln
-      const formData = new FormData(form);
-      const payload = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-      };
+      // === Google reCAPTCHA Token holen ===
+      grecaptcha.ready(function () {
+        grecaptcha.execute('{{ recaptcha_site_key }}', {action: 'contact'}).then(function (token) {
+          const formData = new FormData(form);
+          const payload = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+            recaptcha_token: token
+          };
 
-      // Per fetch an Flask-Endpoint schicken
-      fetch("{{ url_for('main.send_email') }}", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          statusMessage.innerHTML = '<div class="alert alert-success">Ihre Nachricht wurde erfolgreich gesendet.</div>';
-          form.reset();
-        } else {
-          statusMessage.innerHTML = '<div class="alert alert-danger">Fehler: ' + data.error + '</div>';
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        statusMessage.innerHTML = '<div class="alert alert-danger">Beim Senden ist ein Fehler aufgetreten.</div>';
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
+          fetch("{{ url_for('main.send_email') }}", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              statusMessage.innerHTML = '<div class="alert alert-success">Ihre Nachricht wurde erfolgreich gesendet.</div>';
+              form.reset();
+            } else {
+              statusMessage.innerHTML = '<div class="alert alert-danger">Fehler: ' + data.error + '</div>';
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            statusMessage.innerHTML = '<div class="alert alert-danger">Beim Senden ist ein Fehler aufgetreten.</div>';
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+          });
+        });
       });
     });
   });
