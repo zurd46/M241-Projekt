@@ -17,3 +17,12 @@ header {
     margin: auto;
     overflow: hidden;
 }
+
+/* ===================================================================
+   Praktikanten-Bilder: gleiche Höhe, proportional skalieren
+   =================================================================== */
+.card-img-top.same-height {
+  width: 100%;        /* Vollbreite des Karten-Containers */
+  height: 450px;      /* Feste Höhe von 250px (anpassbar) */
+  object-fit: cover;  /* Zuschneiden, ohne das Seitenverhältnis zu verzerren */
+}

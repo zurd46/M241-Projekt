@@ -1,122 +1,191 @@
 {% extends 'base.html' %}
 {% block title %}Praktikanten - IT-Praktika{% endblock %}
+
 {% block content %}
 <div class="px-4 px-md-5 py-5">
-    <h2 class="mb-4">Unsere Praktikanten</h2>
-    <p class="mb-5">Lernen Sie unsere motivierten Praktikanten kennen:</p>
-    <!-- Carousel Start -->
-    <div id="praktikantenCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
-        <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <div class="row justify-content-center">
-                    <!-- Praktikant 1 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" alt="Lukas Bieri">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Lukas Bieri</h6>
-                                <div class="text-muted small mb-1">Softwareentwicklung</div>
-                                <div class="small">Teamplayer, Webentwicklung, Zuverlässig</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Praktikant 2 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="card-img-top" alt="Daniel Zurmühle">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Daniel Zurmühle</h6>
-                                <div class="text-muted small mb-1">Full Stack &amp; KI</div>
-                                <div class="small">Python, Backend, Automatisierung</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Praktikant 3 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top" alt="Sarah Muster">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Sarah Muster</h6>
-                                <div class="text-muted small mb-1">Frontend &amp; UX</div>
-                                <div class="small">HTML, CSS, JavaScript, Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Praktikant 4 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/men/21.jpg" class="card-img-top" alt="David Meier">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">David Meier</h6>
-                                <div class="text-muted small mb-1">Systemtechnik</div>
-                                <div class="small">Netzwerke, Windows, Linux</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <h2 class="mb-4">Unsere Praktikanten</h2>
+  <p class="mb-5">Lernen Sie unsere motivierten Praktikanten kennen:</p>
+
+  <!-- Carousel Start -->
+  <div id="praktikantenCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row justify-content-center">
+
+          <!-- Praktikant 1: Dhannya Chollempuzha -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/Dhannya.jpg') }}"
+                class="card-img-top same-height"
+                alt="Dhannya Chollempuzha"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Dhannya Chollempuzha</h6>
+                <div class="text-muted small mb-1">Softwareentwicklung</div>
+                <div class="small">Teamplayer, Webentwicklung, Zuverlässig</div>
+              </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <div class="row justify-content-center">
-                    <!-- Praktikant 5 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/women/55.jpg" class="card-img-top" alt="Nadine Schmid">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Nadine Schmid</h6>
-                                <div class="text-muted small mb-1">Projektmanagement</div>
-                                <div class="small">Organisation, Planung, Kommunikation</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Praktikant 6 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/men/54.jpg" class="card-img-top" alt="Max Muster">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Max Muster</h6>
-                                <div class="text-muted small mb-1">Datenanalyse</div>
-                                <div class="small">Python, Statistik, Reports</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Praktikant 7 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/men/33.jpg" class="card-img-top" alt="Peter Keller">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Peter Keller</h6>
-                                <div class="text-muted small mb-1">Cloud &amp; DevOps</div>
-                                <div class="small">AWS, Azure, Automation</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Praktikant 8 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://randomuser.me/api/portraits/women/35.jpg" class="card-img-top" alt="Anna Graf">
-                            <div class="card-body p-2">
-                                <h6 class="card-title mb-1">Anna Graf</h6>
-                                <div class="text-muted small mb-1">Testing &amp; Qualität</div>
-                                <div class="small">Unit Tests, UI-Tests, Dokumentation</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+          <!-- Praktikant 2: Eray Gündogdu -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/Eray_G.jpg') }}"
+                class="card-img-top same-height"
+                alt="Eray Gündogdu"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Eray Gündogdu</h6>
+                <div class="text-muted small mb-1">Full Stack &amp; KI</div>
+                <div class="small">Python, Backend, Automatisierung</div>
+              </div>
             </div>
-            <!-- Füge weitere Slides nach gleichem Muster hinzu, falls du mehr als 8 Profile hast -->
+          </div>
+
+          <!-- Praktikant 3: Alexander Da Costa -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/AlexanderDaCosta.jpg') }}"
+                class="card-img-top same-height"
+                alt="Alexander Da Costa"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Alexander Da Costa</h6>
+                <div class="text-muted small mb-1">Frontend &amp; UX</div>
+                <div class="small">HTML, CSS, JavaScript, Design</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Praktikant 4: Hadi Alaeddine -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/hadi.jpeg') }}"
+                class="card-img-top same-height"
+                alt="Hadi Alaeddine"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Hadi Alaeddine</h6>
+                <div class="text-muted small mb-1">Systemtechnik</div>
+                <div class="small">Netzwerke, Windows, Linux</div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Vorherige</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Nächste</span>
-        </button>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+
+          <!-- Praktikant 5: Ivan Scheuber -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/Ivan.png') }}"
+                class="card-img-top same-height"
+                alt="Ivan Scheuber"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Ivan Scheuber</h6>
+                <div class="text-muted small mb-1">Projektmanagement</div>
+                <div class="small">Organisation, Planung, Kommunikation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Praktikant 6: Efstratios Vogiatzis -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/EfstratiosVogiatzis.jpeg') }}"
+                class="card-img-top same-height"
+                alt="Efstratios Vogiatzis"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Efstratios Vogiatzis</h6>
+                <div class="text-muted small mb-1">Datenanalyse</div>
+                <div class="small">Python, Statistik, Reports</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Praktikant 7: Philipp Klunder -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/Klunder.Philipp.jpeg') }}"
+                class="card-img-top same-height"
+                alt="Philipp Klunder"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Philipp Klunder</h6>
+                <div class="text-muted small mb-1">Cloud &amp; DevOps</div>
+                <div class="small">AWS, Azure, Automation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Praktikant 8: Jan Lucas Kubacki -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/janlucaskubacki.jpg') }}"
+                class="card-img-top same-height"
+                alt="Jan Lucas Kubacki"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Jan Lucas Kubacki</h6>
+                <div class="text-muted small mb-1">Testing &amp; Qualität</div>
+                <div class="small">Unit Tests, UI-Tests, Dokumentation</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+
+          <!-- Praktikant 9: Milo Müller -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="{{ url_for('static', filename='images/milo.jpg') }}"
+                class="card-img-top same-height"
+                alt="Milo Müller"
+              >
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Milo Müller</h6>
+                <div class="text-muted small mb-1">Support &amp; Helpdesk</div>
+                <div class="small">Windows, Kundenbetreuung, Troubleshooting</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wenn du mehr Profile hast, kopiere diesen Block und passe an -->
+        </div>
+      </div>
     </div>
-    <!-- Carousel End -->
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Vorherige</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#praktikantenCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Nächste</span>
+    </button>
+  </div>
+  <!-- Carousel End -->
 </div>
 {% endblock %}
