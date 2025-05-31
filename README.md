@@ -5,6 +5,31 @@ Flask-&-Bootstrap-basiertes Portal der Benedict-Schule Luzern, um Auszubildende 
 
 ---
 
+Projektstruktur:
+   ```bash
+   M241-Projekt/
+      ├── .env               # SMTP-& E-Mail-Daten (Demo-Werte)
+      ├── requirements.txt
+      ├── run.py             # Flask-App-Factory
+      └── app/
+          ├── __init__.py    # create_app(): Flask, Mail, Blueprint, Kontext
+          ├── routes.py      # Routen & E-Mail-Handler
+          ├── templates/     # Jinja2-Vorlagen
+          │   ├── base.html
+          │   ├── index.html
+          │   ├── about.html
+          │   ├── trainees.html
+          │   ├── school.html
+          │   ├── contact.html
+          │   └── impressum.html
+          └── static/
+              ├── css/
+              │   └── style.css
+              ├── favicon.ico
+              └── images/    # Alle Hero- und Profilbilder
+
+```
+
 ## Installation
 
 1. Repository klonen  
