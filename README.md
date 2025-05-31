@@ -38,3 +38,10 @@ Flask-&-Bootstrap-basiertes Portal der Benedict-Schule Luzern, um Auszubildende 
    Achte darauf, dass .env in .gitignore steht.
    Alternativ System-Umgebungsvariablen verwenden.
 
+5. Anwendung starten
+    ```bash
+    python run.py
+
+6. Im Browser öffnen
+   ```bash
+   http://127.0.0.1:5000
